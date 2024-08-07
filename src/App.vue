@@ -1,17 +1,17 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
-import Header from './components/Header.vue';
-
-import Bottom from './components/Bottom.vue';
-import Beside from './components/beside.vue';
-export default{
-  name:'App'
-}
+// import Header from './components/Header.vue';
+// import Bottom from './components/Bottom.vue';
+// import Beside from './components/beside.vue';
+// import Login from './components/login.vue';
+// export default{
+//   name:'App'
+// }
 </script>
 
 
   <template>
-  <div class="common-layout">
+  <!-- <div class="common-layout">
     <el-container>
       <el-header style="position: fixed;">
         <el-affix :offset="0">
@@ -31,9 +31,12 @@ export default{
             </el-footer>
         </el-container>
       </el-container>
-    </el-container>
-  </div>
-  <RouterView />
+    </el-container> -->
+    <!-- <Login></Login> -->
+  <!-- </div> -->
+   <div>
+    <RouterView />
+   </div>
 </template>
 
      
