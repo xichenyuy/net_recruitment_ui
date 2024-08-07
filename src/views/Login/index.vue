@@ -14,6 +14,7 @@
             prefix-icon="el-icon-user"
             v-model="user.username"
           />
+          
         </el-form-item>
         <span>请输入密码：</span>
         <el-form-item prop="password">
