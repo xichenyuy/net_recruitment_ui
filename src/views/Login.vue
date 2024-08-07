@@ -2,6 +2,7 @@
 <script setup>
 import { User, Lock } from '@element-plus/icons-vue'
 import { ref } from 'vue'
+import { ElMessage } from 'element-plus';
 //控制注册与登录表单的显示， 默认显示注册
 const isRegister = ref(false)
 //定义数据模型
@@ -36,13 +37,10 @@ const rules={
 }
 
 import {userRegisterService, userLoginService} from '@/api/user'
+import { ElMessage } from 'element-plus';
 const register = async () =>{
     let result = await userRegisterService(registerData.value);
-    if( result.code === 0){
-        alert(result.message ? result.message : '注册成功')
-    } else {
-        alert('注册失败')
-    }
+    ElMessage.success('注册成功')
 }
 
 const loginData = ref({
@@ -52,11 +50,7 @@ const loginData = ref({
 
 const login = async () =>{
     let result = await userLoginService(loginData.value);
-    if( result.code === 0){
-        alert(result.message ? result.message : '登录成功')
-    } else {
-        alert('登录失败')
-    }
+    ElMessage.success('登录成功')
 }
 
 </script>
