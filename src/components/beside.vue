@@ -13,29 +13,27 @@
   >
     <el-sub-menu index="1">
       <template #title>
-        <el-icon><location /></el-icon>
-        <span>Navigator One</span>
+        <el-icon style="color: coral;"><House /></el-icon>
+        <span >首页</span>
       </template>
       <el-menu-item-group>
         <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
+        <el-menu-item index="1-1">一面面试</el-menu-item>
+        <el-menu-item index="1-2">未参加一面的名单</el-menu-item>
+        <el-menu-item index="1-3">应试者管理</el-menu-item>
       </el-menu-item-group>
       <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
+        <el-menu-item index="1-4">第二志愿审核</el-menu-item>
+        <el-menu-item index="1-5">调剂管理</el-menu-item>
+    </el-menu-item-group>
     </el-sub-menu>
     <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
+      <el-icon style="color: coral;"><ChatRound/></el-icon>
+      <template #title >最新消息通知</template>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
+    <el-menu-item index="3">
+      <el-icon style="color: coral;"><setting /></el-icon>
+      <template #title >系统设置</template>
     </el-menu-item>
     <el-menu-item index="4">
       <el-icon><setting /></el-icon>
@@ -48,7 +46,9 @@
 
 import { ref } from 'vue'
 import {
+  ChatRound,
   Document,
+  House,
   Menu as IconMenu,
   Location,
   Setting,
@@ -71,5 +71,4 @@ const handleClose = (key: string, keyPath: string[]) => {
  width: 250px;
   min-height: 650px;
 }
-
 </style>

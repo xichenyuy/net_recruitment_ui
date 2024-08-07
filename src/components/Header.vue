@@ -35,7 +35,7 @@ header{
     align-items: center;
     /*当容器为flex时，垂直方向上居中对齐*/
     /*当容器为flex时，水平方向居中对齐为justify-content: center*/ 
-    width: 100%;
+    width:10000px;
     height: 50px;
     background-color: rgb(255, 118, 20);
     box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.16);
@@ -44,7 +44,8 @@ header{
     display: inline-flex;
     width:500px ;
     height: 50px;
-    align-items: center
+    align-items: center;
+    margin-left: 50px;
 }
 .content-logo img{
     width: 100%;

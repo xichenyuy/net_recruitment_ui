@@ -2,9 +2,8 @@
     
         <div class="Bottom">
         <div class="Bottom-content">
-        <div class="title">
-                <h1>团委学生会招新系统</h1>
-            </div>
+            <h1 >团委学生会招新系统</h1>
+           
         </div>
     </div>
     
@@ -20,12 +19,11 @@
     background-color: rgb(255, 118, 20);
     box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.16);
   }
-  .bottom-cintent{
-    display: inline-flex;
-    width:500px ;
-    height: 50px;
-    align-items: center
-  }
+  
+
+
+
+
 </style>
 <script>
 export default{
