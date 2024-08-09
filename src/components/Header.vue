@@ -52,7 +52,7 @@ header{
 }
 .content-logo{
     width:80px ;
-  border: 1px solid #000; /* 为了清晰地显示每个项目 */
+  border: 1px solid  rgb(255, 118, 20);
   padding: 2px;
   margin: 5px;
   height: 50px;
@@ -61,7 +61,7 @@ header{
 }
 .title{
   width:180px ; 
-  border: 1px solid #000; /* 为了清晰地显示每个项目 */
+  border: 1px solid  rgb(255, 118, 20);
   padding: 2px;
   margin: 5px;
   height: 50px;

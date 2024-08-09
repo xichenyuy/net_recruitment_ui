@@ -1,6 +1,8 @@
+//首页
 <script>
 // import Header from '@/components/Header.vue';
 import Header from '/src/components/Header.vue';
+import Background from '/src/components/background.vue';
 import Bottom from '/src/components/Bottom.vue';
 import Beside from '/src/components/beside.vue';
 // import Login from './components/login.vue';
@@ -9,7 +11,9 @@ export default {
   components: {
     Header,
     Bottom,
-    Beside
+    Beside,
+    Background,
+    // Login
   }
 };
 
@@ -19,18 +23,20 @@ export default {
   <template>
   <div class="common-layout">
     <el-container>
-      <el-header style="position: fixed;">
+      <el-header style="position: fixed;background-color: white;">
         <el-affix :offset="0">
         <Header></Header>
       </el-affix>
       </el-header>
       <el-container>
-        <el-aside >
+        <el-aside style="background-color: white;">
           <Beside></Beside>
         </el-aside>
         <el-container>
-          <el-main>Main</el-main>
-          <el-footer >
+          <el-main style="background-color: white;">
+            <Background></Background>
+          </el-main>
+          <el-footer style="background-color: white;" >
             <el-affix position="bottom" :offset="0">
              <Bottom></Bottom>
             </el-affix>
