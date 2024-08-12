@@ -5,7 +5,7 @@
       <img src="/src/assets/团学logo.png" alt="">
     </div>
     <!-- 登录框 -->
-    <div class="modal" style="background-color: #08070761;z-index:500">
+    <div class="modal"  >
       <el-form ref="userForm" :model="user" status-icon :rules="rules">
         <div class="title">团委学生会招新系统</div>
         <el-form-item prop="username">
@@ -109,9 +109,10 @@ export default {
   .modal {
     width: 700px;
     padding: 100px;
-    background-color: #fff;
+    background-color: #65dca8;
     border-radius: 15px;
     box-shadow: 0px 17px 26px 5px #0c0d0e4d;
+    transition: background-color 0.3s;
     .title {
       font-size: 50px;
       line-height: 1.5;
@@ -142,6 +143,9 @@ export default {
     }
   }
 }
+.modal:hover {
+      background-color: rgba(155, 240, 118, 0.941);
+    }
 #background {
   background-position: center;
   height: 300px;
