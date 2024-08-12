@@ -2,7 +2,7 @@
 <script setup>
 import { User, Lock } from '@element-plus/icons-vue'
 import { ref } from 'vue'
-import { ElMessage } from 'element-plus';
+// import { ElMessage } from 'element-plus';
 //控制注册与登录表单的显示， 默认显示注册
 const isRegister = ref(false)
 //定义数据模型
