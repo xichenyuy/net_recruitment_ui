@@ -1,11 +1,16 @@
-<script lang="ts" setup>
-import { ref } from 'vue';
-const isCollapse = ref(true);
+<script setup>
+import { ref } from 'vue'
 
-const handleOpen = (key: string, keyPath: string[]) => {
+const isCollapse = ref(false);
+
+const toggleMenu = () => {
+    isCollapse.value = !isCollapse.value;
+}
+
+const handleOpen = (key, keyPath) => {
   console.log(key, keyPath)
 }
-const handleClose = (key: string, keyPath: string[]) => {
+const handleClose = (key, keyPath) => {
   console.log(key, keyPath)
 }
 </script>
@@ -15,11 +20,13 @@ const handleClose = (key: string, keyPath: string[]) => {
         <el-container>
             <!-- 头部区域 -->
             <el-header>
-                <div class="el-header__logo"></div>
-                <div><strong>招新系统</strong></div>
+                <div style="height: 100%;  display: flex; align-items: center;">
+                    <el-image src="../../src/assets/团学logo.png" style="height: 100%;"></el-image>
+                    <span style="color: #fff;">团委学生会招新系统</span>
+                </div>
                 <el-dropdown placement="bottom-end">
                     <span class="el-dropdown__box">
-                        <el-avatar src="../assets/default.png" />
+                        <el-avatar src="../../src/assets/default.png" />
                         <el-icon>
                             <CaretBottom />
                         </el-icon>
@@ -37,17 +44,16 @@ const handleClose = (key: string, keyPath: string[]) => {
             <el-container>
                 <!-- 左侧菜单 -->
                 <el-aside width="200px">
-                    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-                        <el-radio-button :value="false">expand</el-radio-button>
-                        <el-radio-button :value="true">collapse</el-radio-button>
-                    </el-radio-group>
+                    <div style="width: 100%; display: flex; align-items: center;" >
+                        <el-icon style="height: 100%;" @click="toggleMenu"><Fold /></el-icon>
+                    </div>
                     <el-menu active-text-color="#ffd04b"  
                         default-active="/article/category"
-                        :collaspe="isCollapse"
+                        :collapse="isCollapse"
                         @open="handleOpen"
                         @close="handleClose"
                         router>
-                        <el-menu-item>
+                        <el-menu-item index="1">
                             <el-icon><HomeFilled /></el-icon>
                             <span>首页</span>
                         </el-menu-item>
@@ -59,19 +65,20 @@ const handleClose = (key: string, keyPath: string[]) => {
                             <el-icon><Management /></el-icon>
                             <span>面试配置</span>
                         </el-menu-item>
-                        <el-sub-menu >
+
+                        <el-sub-menu index="2">
                             <template #title>
                                 <el-icon><Tools /></el-icon>
                                 <span>配置中心</span>
                             </template>
                             <el-menu-item-group title="Group One">
-                                <el-menu-item>
+                                <el-menu-item index="3">
                                     <el-icon><User /></el-icon>
                                     <span>用户管理</span>
                                 </el-menu-item>
                             </el-menu-item-group>
                         </el-sub-menu>
-                        <el-sub-menu >
+                        <el-sub-menu index="4">
                             <template #title>
                                 <el-icon><UserFilled /></el-icon>
                                 <span>个人中心</span>
@@ -99,7 +106,7 @@ const handleClose = (key: string, keyPath: string[]) => {
                         <router-view></router-view>
                     </el-main>
                     <!-- 右侧底部区域 -->
-                    <el-footer>大事件 ©2023 Created by 黑马程序员</el-footer>
+                    <el-footer>招新系统 ©2024 Created by netmen</el-footer>
                 </el-container>
             </el-container>
         </el-container>
@@ -110,28 +117,11 @@ const handleClose = (key: string, keyPath: string[]) => {
 .layout-container {
     height: 100vh;
 
-    .el-aside {
-        // background-color: #FF7614;
-
-        
-
-        .el-menu {
-            border-right: none;
-        }
-    }
-
     .el-header {
-
         background-color: #FF7614;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        &__logo {
-            height: 120px;
-            background: url('@/assets/logo.png') no-repeat center / 120px auto;
-        }
-
 
         .el-dropdown__box {
             display: flex;
@@ -148,6 +138,17 @@ const handleClose = (key: string, keyPath: string[]) => {
             }
         }
     }
+
+    .el-aside {
+        // background-color: #FF7614;
+        // height: 100%;
+        
+        .el-menu {
+            border-right: none;
+        }
+    }
+
+    
 
     .el-footer {
         display: flex;
