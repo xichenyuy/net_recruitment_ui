@@ -16,6 +16,7 @@ instance.interceptors.request.use(
         if(tokenStore.token){
             config.headers.Authorization = tokenStore.token;
         }
+        return config;
     },
     (err) =>{   //请求错误的回调
         //异步状态转化为失败
