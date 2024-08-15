@@ -24,6 +24,13 @@ instance.interceptors.request.use(
     }
 )
 
+// 由于加载顺序的问题 不能使用vue中的这种写法
+// import { useRouter } from 'vue-router';
+// const router = useRouter();
+
+import router from '@/router'
+
+
 //添加响应拦截器
 instance.interceptors.response.use(
     result=>{
@@ -35,7 +42,14 @@ instance.interceptors.response.use(
         return Promise.reject(result.data)
     },
     err=>{
-        ElMessage.error('服务异常')
+        //判断响应状态码 若为401 则未登录 跳转到登录页面
+        if(err.response.status === 401){
+            ElMessage.error('请先登录');
+            router.push('/login');
+        } else {
+            ElMessage.error('服务异常')
+        }
+    
         return Promise.reject(err);//异步的状态转化成失败的状态
     }
 )
