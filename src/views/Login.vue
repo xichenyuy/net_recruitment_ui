@@ -48,9 +48,19 @@ const loginData = ref({
     password:''
 })
 
+import { useRouter } from 'vue-router'
+import { useTokenStore } from '@/stores/token';
+const tokenStore = useTokenStore();
+const router = useRouter()
 const login = async () =>{
     let result = await userLoginService(loginData.value);
     ElMessage.success('登录成功')
+    // 跳转到首页 路由完成跳转 
+    router.push('/');
+    //将token存储到pinia中
+    console.log(result);
+    console.log(result.data);
+    tokenStore.setToken(result.data.token)
 }
 
 </script>
