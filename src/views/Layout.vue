@@ -99,7 +99,7 @@ import avatar from '@/assets/default.png'
     height: 100vh;
 
     .el-aside {
-        background-color: #232323;
+        background-color: #FF7614;
 
         &__logo {
             height: 120px;
